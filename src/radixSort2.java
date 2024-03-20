@@ -8,7 +8,11 @@ public class radixSort2 {
 
         // Store count of occurrences in count[]
         for (String s : arr) {
-            int index = (s.length() <= exp) ? 0 : s.charAt(s.length() - exp - 1);
+            int index;
+
+            if(s.length() <= exp) index = 0;
+            else index = s.charAt(s.length() - exp - 1);
+
             count[index]++;
         }
 
@@ -20,7 +24,12 @@ public class radixSort2 {
 
         // Build the res array
         for (int i = n - 1; i >= 0; i--) {
-            int index = (arr[i].length() <= exp) ? 0 : arr[i].charAt(arr[i].length() - exp - 1);
+
+            int index;
+
+            if(arr[i].length() <= exp) index = 0;
+            else index = arr[i].charAt(arr[i].length() - exp - 1);
+
             res[count[index] - 1] = arr[i];
             count[index]--;
         }
