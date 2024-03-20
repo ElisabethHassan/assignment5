@@ -2,7 +2,6 @@ public class extraCredit {
     public int[] sumTarget(int[] arr, int k){
         int[] res = {-1, -1};
         int total = 0;
-        int j;
 
         int l = 0;
         int r = 0;
@@ -10,7 +9,7 @@ public class extraCredit {
         while(r < arr.length){
             total += arr[r];
 
-            //if the total is greater than targ
+            //if the total is greater than target
             //and still in bounds
             //decrease the total and move the left pointer
             while(total > k && l <= r){
